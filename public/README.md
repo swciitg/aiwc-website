@@ -1,1 +1,2 @@
 # aiwc-website
+STATIC FILES
