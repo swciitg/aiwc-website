@@ -8,6 +8,7 @@ const formRoutes = require('./routes/form.routes');
 const linkRoutes = require('./routes/link.routes');
 
 
+app.set("view engine","ejs");
 
 app.use(HomeURL+"/admin",adminRoutes);
 app.use(HomeURL+"/admin/notice",noticeRoutes);
