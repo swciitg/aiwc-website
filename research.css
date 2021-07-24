@@ -1,0 +1,34 @@
+.align {
+    margin-left: 7%;
+    margin-right: 7%;
+    
+
+}
+
+.font {
+    font-size: x-small;
+    margin-right: 20%;
+    font-size: 1px;
+}
+
+.link {
+    color: #F16B58;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+#arrow {
+    font-size: 25px
+   
+}
+
+.subtitles {
+    font-weight: 100;
+    font-family: 'Lato', sans-serif;
+    
+}
+#research_font{font-family: 'Bebas Neue', sans-serif;}
+
+.bold {
+    font-weight: bold;
+    
+}
