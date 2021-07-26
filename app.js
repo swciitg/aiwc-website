@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-
-const HomeURL="/aiwc";
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8080;
@@ -16,15 +14,12 @@ const formRoutes = require('./routes/form.routes');
 const linkRoutes = require('./routes/link.routes');
 
 
-
-app.use(HomeURL+"/admin",adminRoutes);
-app.use(HomeURL+"/admin/notice",noticeRoutes);
-app.use(HomeURL+"/admin/announcement",announcementRoutes);
-app.use(HomeURL+"/admin/uploads",adminUploadsRoutes);
-app.use(HomeURL+"/admin/form",formRoutes);
-app.use(HomeURL+"/admin/link",linkRoutes);
-
 app.use(BASE_PATH + "/admin", adminRoutes);
+app.use(BASE_PATH + "/admin/notice", noticeRoutes);
+app.use(BASE_PATH + "/admin/announcement", announcementRoutes);
+app.use(BASE_PATH + "/admin/uploads", adminUploadsRoutes);
+app.use(BASE_PATH + "/admin/form", formRoutes);
+app.use(BASE_PATH + "/admin/link", linkRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
