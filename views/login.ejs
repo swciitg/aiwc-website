@@ -1,0 +1,16 @@
+<%- include("./partials/header.ejs") %>
+    <h1 class="text-3xl text-black pb-6">Login</h1>
+    <div class="flex flex-wrap justify-center">
+        <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
+            <p class="text-xl pb-6 flex items-center">
+                <i class="fas fa-list mr-3"></i> Log In
+            </p>
+            <div class="leading-loose">
+                <a href=<%=process.env.BASE_PATH + "/admin/login/outlook" %> class="flex items-center text-black opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-users-cog mr-3"></i> Login using Outlook
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
