@@ -2,7 +2,12 @@ body{
   margin: 3px;
 }
 .brand{
-  font-family: sans-serif;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.8rem;
+  
+}
+.brand img{
+  padding: 2px 2px;
 }
 a:active
 {
@@ -19,7 +24,7 @@ color:rgb(236, 137, 8)  !important;
   width: 3.5rem;
   font-size: 0.8rem;
   padding-right: 10px;
-  font-weight: 100;
+  /* font-weight: 100; */
   text-align: left;
 }
 .nav-link:hover{
@@ -28,8 +33,9 @@ color:rgb(236, 137, 8)  !important;
 }
 .one{
   
-  background-color: #12299bdc;
-  
+  background-color: #24344E;
+  ;
+  height: 84.6vh;
 }
 
 
@@ -44,19 +50,19 @@ color:rgb(236, 137, 8)  !important;
   
 }
 .big-heading{
-  font-family: 'Montserrat', sans-serif;
-  font-size:3.1rem;
+  font-family: 'Bebas Neue', cursive;
+  font-size:11vh;
   line-height:1.5;
-  font-weight:700;
+  font-weight:50;
 }
 .t{
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .p{
   color: white;
 }
 .cl{
-  color: orange;
+  color:  #F16B58;
 }
 
 .s1 img{
