@@ -11,17 +11,19 @@ const PORT = process.env.PORT || 8080;
 const BASE_PATH = process.env.BASE_PATH;
 const DB_URI = process.env.MONGO_URI;
 
-require("./config/passport")(passport);
+// require("./config/passport")(passport); CHANGED
+require("./config/passport");
 
 //to serve static files
 app.use(BASE_PATH, express.static(__dirname + "/public"));
 
 //importing the routers
 const adminRoutes = require('./routes/admin.routes');
-// const noticeRoutes = require('./routes/notice.routes');
-// const announcementRoutes = require('./routes/announcement.routes.js');
-// const formRoutes = require('./routes/form.routes');
-// const linkRoutes = require('./routes/link.routes');
+const latestNewsRoutes = require('./routes/latestNews.routes');
+const partnersRoutes = require('./routes/partners.routes.js');
+const peopleRoutes = require('./routes/people.routes');
+const researchRoutes = require('./routes/research.routes');
+const userRoutes = require('./routes/user.routes');
 
 //connecting to DB
 mongoose.connect(
@@ -68,11 +70,12 @@ app.use(
 
 app.set('view engine', 'ejs');
 
+app.use(BASE_PATH + "/", userRoutes);
 app.use(BASE_PATH + "/admin", adminRoutes);
-// app.use(BASE_PATH + "/admin/notice", noticeRoutes);
-// app.use(BASE_PATH + "/admin/announcement", announcementRoutes);
-// app.use(BASE_PATH + "/admin/uploads", adminUploadsRoutes);
-// app.use(BASE_PATH + "/admin/form", formRoutes);
+app.use(BASE_PATH + "/admin/latestNews", latestNewsRoutes);
+app.use(BASE_PATH + "/admin/partners", partnersRoutes);
+app.use(BASE_PATH + "/admin/people", peopleRoutes);
+app.use(BASE_PATH + "/admin/research", researchRoutes);
 // app.use(BASE_PATH + "/admin/link", linkRoutes);
 
 app.listen(PORT, () => {
