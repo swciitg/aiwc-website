@@ -1,0 +1,194 @@
+.contactcard {
+    padding: 1.86rem;
+    background: #F7ECDC;
+    box-shadow: 0px 38.857px 106.764px rgba(0, 0, 0, 0.0416191), 0px 20.7748px 68.0627px rgba(0, 0, 0, 0.0298834), 0px 11.6462px 44.2206px rgba(0, 0, 0, 0.0210525), 0px 6.1852px 27.0968px rgba(0, 0, 0, 0.0136632), 0px 2.5738px 13.1048px rgba(0, 0, 0, 0.00703801);
+    border-radius: 14.8815px;
+}
+
+.contactcard-head {
+    justify-content: center;
+    align-items: center;
+    padding: 7.44073px 14.8815px 3.72036px;
+    background: #F16B58;
+    box-shadow: 0px 93.0091px 116.261px rgba(255, 101, 9, 0.07), 0px 38.857px 48.5712px rgba(255, 101, 9, 0.0503198), 0px 20.7748px 25.9685px rgba(255, 101, 9, 0.0417275), 0px 11.6462px 14.5577px rgba(255, 101, 9, 0.035), 0px 6.1852px 7.7315px rgba(255, 101, 9, 0.0282725), 0px 2.5738px 3.21725px rgba(255, 101, 9, 0.2);
+    border-radius: 8px;
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.25em;
+    color: #FFFFFF;
+    margin: 0rem 0rem 1rem 0rem;
+    line-height: 2.5rem;
+}
+
+.contactcard-body {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.935rem;
+    line-height: 130%;
+    letter-spacing: 0.04em;
+    color: #000000;
+    text-align: left;
+}
+
+.contactcard-body-head {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 105.5%;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+.contactcard-img {
+    margin-left: -3rem;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: drop-shadow(0px 53.0152px 211.131px rgba(0, 0, 0, 0.04)) drop-shadow(0px 15.9825px 63.6497px rgba(0, 0, 0, 0.0153227)) drop-shadow(0px 6.63833px 26.4368px rgba(0, 0, 0, 0.0064637)) drop-shadow(0px 2.40095px 9.56169px rgba(0, 0, 0, 0.00211016));
+    border-radius: 7.44073px;
+}
+
+.email {
+    text-decoration: underline;
+    font-weight: bold;
+    overflow-wrap: break-word;
+}
+
+.knowmore {
+    text-decoration-line: underline;
+    color: #F16B58;
+}
+
+.heading {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 0.1em;
+    color: #1E2532;
+}
+
+.subheading {
+    font-size: 3rem;
+    font-weight: 100;
+    margin-bottom: 1.2rem;
+}
+
+.bottom-line {
+    border-bottom: solid #63666E 3.5px;
+    margin-bottom: 3rem;
+}
+
+.footer-heading {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.1em;
+    color: white;
+}
+
+.bottom-line-white {
+    border-bottom: solid #FFFFFF 3.5px;
+    margin-bottom: 3rem;
+}
+
+.space-up {
+    margin-top: 6rem;
+}
+
+.form {
+    color: black;
+    box-sizing: border-box;
+    border: 3px solid #8b98af;
+    border-radius: 8px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    height: 3.9rem;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form::placeholder {
+    color: #a6aab1;
+    vertical-align: text-top;
+}
+
+.message {
+    height: 10rem;
+}
+
+.submit-button {
+    background: #F16B58;
+    box-shadow: 0px 22.4847px 28.1059px rgba(255, 101, 9, 0.0503198), 0px 12.0214px 15.0268px rgba(255, 101, 9, 0.0417275), 0px 6.7391px 8.42388px rgba(255, 101, 9, 0.035), 0px 3.57909px 4.47386px rgba(255, 101, 9, 0.0282725), 0px 1.48934px 1.86167px rgba(255, 101, 9, 0.2);
+    border-radius: 4.3056px;
+    border: none;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34.4448px;
+    line-height: 113.2%;
+    height: 3.5rem;
+    /* identical to box height, or 39px */
+    letter-spacing: 0.065em;
+    /* White */
+    color: #FFFFFF;
+    margin-bottom: 5rem;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    color: inherit;
+}
+
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .container {
+        max-width: 90% !important;
+    }
+    .contactcard-img {
+        height: 400px;
+    }
+    .contactcard-head {
+        font-size: 2rem;
+        line-height: 4rem;
+    }
+    .contactcard-body-head {
+        font-size: 3rem;
+    }
+    .contactcard-body {
+        font-size: 1.8rem;
+    }
+    .heading {
+        font-size: 5rem;
+    }
+    .subheading {
+        font-size: 4rem;
+        margin-bottom: 5rem;
+    }
+    .form {
+        font-size: 3rem;
+        line-height: 4rem;
+        height: 6rem;
+        letter-spacing: 0.01em;
+        padding: 3rem 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .message {
+        height: 20rem;
+    }
+    .submit-button {
+        font-size: 3rem;
+        height: 7rem;
+    }
+}
