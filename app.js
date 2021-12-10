@@ -3,6 +3,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const session = require("express-session");
 const helmet = require("helmet");
+const methodOverride = require("method-override");
 require("dotenv").config();
 const app = express();
 
@@ -16,7 +17,7 @@ require("./config/passport");
 
 //to serve static files
 app.use(BASE_PATH, express.static(__dirname + "/public"));
-
+app.use(methodOverride("_method"));
 //importing the routers
 const adminRoutes = require('./routes/admin.routes');
 const latestNewsRoutes = require('./routes/latestNews.routes');
