@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express();
 
 //constants defined in .env file
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 const BASE_PATH = process.env.BASE_PATH;
 const DB_URI = process.env.MONGO_URI;
 
@@ -20,7 +20,7 @@ app.use(BASE_PATH, express.static(__dirname + "/public"));
 //importing the routers
 const adminRoutes = require('./routes/admin.routes');
 const latestNewsRoutes = require('./routes/latestNews.routes');
-const partnersRoutes = require('./routes/partners.routes.js');
+const partnersRoutes = require('./routes/partners.routes');
 const peopleRoutes = require('./routes/people.routes');
 const researchRoutes = require('./routes/research.routes');
 const userRoutes = require('./routes/user.routes');
@@ -50,7 +50,7 @@ app.use(
 app.use(helmet());
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
-    // res.locals.basePath = BASE_PATH;
+    res.locals.basePath = BASE_PATH;
     next();
 });
 
@@ -74,7 +74,7 @@ app.use(BASE_PATH + "/", userRoutes);
 app.use(BASE_PATH + "/admin", adminRoutes);
 app.use(BASE_PATH + "/admin/latestNews", latestNewsRoutes);
 app.use(BASE_PATH + "/admin/partners", partnersRoutes);
-app.use(BASE_PATH + "/admin/people", peopleRoutes);
+app.use(BASE_PATH + "/admin/papeople", peopleRoutes);
 app.use(BASE_PATH + "/admin/research", researchRoutes);
 // app.use(BASE_PATH + "/admin/link", linkRoutes);
 

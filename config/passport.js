@@ -22,7 +22,7 @@ passport.use(
             clientID: OUTLOOK_CLIENT_ID,
             clientSecret: OUTLOOK_CLIENT_SECRET,
             // callbackURL: `${BASEAPI}/auth/azureadoauth2/callback`,
-            callbackURL: 'http://localhost:8080/aiwc/admin/login/outlook/redirect',
+            callbackURL: 'http://localhost:8000/aiwc/admin/login/outlook/redirect',
 
             //callbackURL: "http://localhost:8080/sa/api/auth/azureadoauth2/callback",
         },

@@ -13,22 +13,7 @@ router.get("/login", (req, res) => {
     return res.render("login");
 });
 
-
-// router.get('/login/outlook',
-//     passport.authenticate('windowslive', {
-//         scope: ['openid', 'profile']
-//     })
-// ); CHANGED
-
-
 router.get('/login/outlook', passport.authenticate('azure_ad_oauth2'));
-
-// router.get('/login/outlook/redirect',
-//     passport.authenticate('windowslive', { failureRedirect: process.env.BASE_PATH + '/admin/login' }),
-//     (req, res) => {
-//         // Successful authentication, redirect home.
-//         res.redirect(process.env.BASE_PATH + '/admin');
-//     }); CHANGED
 
 router.get('/login/outlook/redirect',
     passport.authenticate('azure_ad_oauth2', { failureRedirect: process.env.BASE_PATH + '/admin/login' }),
@@ -38,3 +23,19 @@ router.get('/login/outlook/redirect',
     });
 
 module.exports = router;
+
+
+
+// router.get('/login/outlook',
+//     passport.authenticate('windowslive', {
+//         scope: ['openid', 'profile']
+//     })
+// ); CHANGED
+
+
+// router.get('/login/outlook/redirect',
+//     passport.authenticate('windowslive', { failureRedirect: process.env.BASE_PATH + '/admin/login' }),
+//     (req, res) => {
+//         // Successful authentication, redirect home.
+//         res.redirect(process.env.BASE_PATH + '/admin');
+//     }); CHANGED
