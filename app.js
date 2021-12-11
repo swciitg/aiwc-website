@@ -75,7 +75,7 @@ app.use(BASE_PATH + "/", userRoutes);
 app.use(BASE_PATH + "/admin", adminRoutes);
 app.use(BASE_PATH + "/admin/latestNews", latestNewsRoutes);
 app.use(BASE_PATH + "/admin/partners", partnersRoutes);
-app.use(BASE_PATH + "/admin/papeople", peopleRoutes);
+app.use(BASE_PATH + "/admin/people", peopleRoutes);
 app.use(BASE_PATH + "/admin/research", researchRoutes);
 // app.use(BASE_PATH + "/admin/link", linkRoutes);
 

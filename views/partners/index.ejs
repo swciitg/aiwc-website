@@ -1,0 +1,58 @@
+<%- include("../partials/header.ejs") %>
+    <h1 class="text-3xl text-black pb-6">Partners</h1>
+    <div class="mt-6">
+        <a class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" href=<%=basePath + "/admin/partners/add" %>>Add partner</a>
+        <form style="float: right;" action=<%=basePath + "/admin/partners/find" %> method="POST" enctype="multipart/form-data">
+            <input type="text" name="mySearch1" placeholder="Search ... ">
+            <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit"> Submit </button>
+        </form>
+    </div>
+    <div class="w-auto mt-6 overflow-auto">
+        <div class="bg-white">
+            <table class="min-w-full bg-white">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Contact Person</th>
+                        <th class="px-5 py-3 text-left text-sm font-semibold uppercase tracking-wider">People</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Website</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Edit</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700" id="myMenu">
+                    <%partners.forEach((partner,i)=>{ if(i%2){%>
+                        <tr class="bg-gray-200">
+                            <%}else{%>
+                                <tr>
+                                    <%}%>
+                                        <td class="w-1/3 text-left py-3 px-4">
+                                            <%= partner.name %>
+                                        </td>
+                                        <td class="w-1/3 text-left py-3 px-4">
+                                            <%= partner.contact_person %>
+                                        </td>
+                                        <td class="px-5 py-5 border-b border-gray-200">
+                                            <a class="hover:text-blue-500" href=<%=basePath + "/admin/partners/" + partner.id + "/people" %>>View</a>
+                                        </td>
+                                        <td class="text-left py-3 px-4">
+                                            <% if(partner.website){ %>
+                                                <a class="hover:text-blue-500" href=<%=basePath + "/admin/partners/" + partner.link %> target="_blank">View</a>
+                                                <% }else{ %>----
+                                                    <% } %>
+                                        </td>
+
+                                        <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href=<%=basePath + "/admin/partners/" + partner.id %>>Edit</a></td>
+                                        <td class="text-left py-3 px-4">
+                                            <form class="mx-2" action=<%=basePath + "/admin/partners/" + partner.id + "?_method=DELETE" %> method="POST"><button class="hover:text-red-500">Delete</button></form>
+                                        </td>
+
+                                </tr>
+                                <% })%>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include("../partials/footer.ejs") %>
