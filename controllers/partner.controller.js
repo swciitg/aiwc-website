@@ -58,9 +58,91 @@ exports.deletePartner = async(req, res) => {
         console.log(err.message);
     }
 };
-exports.getPeople = async(req, res) => {};
-exports.addPersonForm = (req, res) => {};
-exports.addPerson = async(req, res) => {};
-exports.editPersonForm = async(req, res) => {};
+exports.getPeople = async(req, res) => {
+    try {
+        const partner = await Partner.findById(req.params.id);
+        if (!partner) {
+          return res.redirect("/aiwc/admin/partners");
+        }
+        const people = partner.people;
+        people.sort(compare);
+        return res.render("partners/people/index", { partner, people });
+      } catch (error) {
+        console.log(error.message);
+      }
+};
+exports.addPersonForm = async(req, res) => {
+    try {
+        const partner = await Partner.findById(req.params.id);
+        if (!partner) {
+          return res.redirect("/aiwc/admin/partners");
+        }
+        return res.render("partners/people/add", { partner });
+      } catch (error) {
+        console.log(error.message);
+      }
+};
+exports.addPerson = async(req, res) => {
+    try {
+        const id = req.params.id;
+        const { name, pic, qualification, designation, employer, personal_website, home_page, email,priority_number } = req.body;
+        const partner = await Partner.findById(id);
+        if (!partner) {
+          return res.redirect("/aiwc/admin/partners");
+        }
+        const person = { name, pic, qualification, designation, employer, personal_website, home_page, email,priority_number } ;
+        let newPerson = partner.people.create(person);
+
+        partner.people.push(newPerson);
+        const updatedList = await partner.save();
+    
+        if (!updatedList) {
+          return res.redirect("/aiwc/admin/partners");
+        }
+        return res.redirect(`/aiwc/admin/partners/${id}/people`);
+      } catch (error) {
+        console.log(error.message);
+      }
+};
+exports.editPersonForm = async(req, res) => {
+    try {
+        const partner_id = req.params.partner_id;
+        const person_id = req.params.person_id;
+        const partner = await Partner.findById(partner_id);
+    
+        if (!partner) {
+            return res.redirect("/aiwc/admin/partners");
+          }
+    
+        const person = partner.people.find((person) => person.id === person_id);
+        if (!person) {
+            return res.redirect(`/aiwc/admin/partners/${partner_id}/people`);
+        }
+        return res.render("partners/people/edit", { partner, person });
+      } catch (error) {
+        console.log(error.message);
+      }
+};
 exports.editPerson = async(req, res) => {};
-exports.deletePerson = async(req, res) => {};
+exports.deletePerson = async(req, res) => {
+    try {
+        const partner_id = req.params.partner_id;
+        const person_id = req.params.person_id;
+        const partner = await Partner.findById(partner_id);
+        if (!partner) {
+          return res.redirect("/aiwc/admin/partners");
+        }
+        let people = partner.people;
+        people = people.filter((person) => person.id != person_id);
+        partner.people = people;
+        await partner.save();
+        return res.redirect(`/aiwc/admin/partners/${partner_id}/people`);
+      } catch (error) {
+        console.log(error.message);
+      }
+};
+
+const compare = (a, b) => {
+    return a.priority_number - b.priority_number;
+  };
+  
