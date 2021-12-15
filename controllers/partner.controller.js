@@ -106,7 +106,7 @@ exports.addPerson = async(req, res) => {
 };
 exports.editPersonForm = async(req, res) => {
     try {
-        const partner_id = req.params.partner_id;
+        const partner_id = req.params.id;
         const person_id = req.params.person_id;
         const partner = await Partner.findById(partner_id);
     
@@ -126,14 +126,16 @@ exports.editPersonForm = async(req, res) => {
 exports.editPerson = async(req, res) => {};
 exports.deletePerson = async(req, res) => {
     try {
-        const partner_id = req.params.partner_id;
+        const partner_id = req.params.id;
         const person_id = req.params.person_id;
         const partner = await Partner.findById(partner_id);
         if (!partner) {
           return res.redirect("/aiwc/admin/partners");
         }
         let people = partner.people;
+        console.log(people);
         people = people.filter((person) => person.id != person_id);
+        console.log(people);
         partner.people = people;
         await partner.save();
         return res.redirect(`/aiwc/admin/partners/${partner_id}/people`);
