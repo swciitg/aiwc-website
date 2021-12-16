@@ -123,7 +123,38 @@ exports.editPersonForm = async(req, res) => {
         console.log(error.message);
       }
 };
-exports.editPerson = async(req, res) => {};
+exports.editPerson = async(req, res) => {
+  try {
+    const partner_id = req.params.id;
+    const person_id = req.params.person_id;
+    const { name, qualification, designation, employer, personal_website, home_page, email,priority_number } = req.body;
+    const partner = await Partner.findById(partner_id);
+
+    if (!partner) {
+      return res.redirect("/aiwc/admin/partners");
+    }
+
+    let people = partner.people;
+
+    people.forEach((person) => {
+      if (person.id === person_id) {
+        person.name = name;
+        person.qualification = qualification;
+        person.designation = designation;
+        person.employer = employer;
+        person.personal_website = personal_website;
+        person.home_page = home_page;
+        person.email = email;
+        person.priority_number = priority_number;    
+      }
+    });
+    partner.people = people;
+    await partner.save();
+    return res.redirect(`/aiwc/admin/partners/${partner_id}/people`);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 exports.deletePerson = async(req, res) => {
     try {
         const partner_id = req.params.id;
