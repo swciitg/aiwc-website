@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+.page{
+    font-family: Bebas Neue;
+    display: flex;
+    flex-direction:column;
+}
+.profile-background
+    {position: absolute;
+    width: 100vw;
+    height: 427px;
+    left: 0px;
+    top: 61px;
+    
+    /* Beige */
+    
+    background: #FCF0E4;
+    border-radius: 32px;
+}
+.intro{
+    z-index: 1;
+}
+.hblock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: absolute;
+    max-width: fit-content;
+    height: 137px;
+    left: 457px;
+    top: 282px;
+}
+.h-1{
+    /* position: absolute; */
+    left: 0%;
+    right: 28.97%;
+    top: 14.81%;
+    bottom: 6.17%;
+    width:auto;
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 8ch;
+    line-height: 2.25ch;
+    /* identical to box height */
+
+    letter-spacing: 0.05em;
+
+    /* Black */
+
+    color: #1E2532;
+}
+.h-2{
+    /* Professor */
+
+
+    position: static;
+    width: 179px;
+    height: 48px;
+    left: 0px;
+    top: 89px;
+
+    /* Heading 2 */
+
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 48px;
+    /* identical to box height */
+
+    letter-spacing: 0.05em;
+
+    /* Black 2 */
+
+    color: #333333;
+}
+.content-list{
+    display:flex;
+    flex-direction:row;
+}
+.vertical-line{
+    position: absolute;
+    width: 248px;
+    height: 0px;
+    left: 50px;
+    top: 720px;
+
+    /* Black 2 */
+    background-color: #333333;
+    border: 1.5px solid #333333;
+    transform: rotate(90deg);
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    font-size:x-large;
+    position: absolute;
+    width: 202px;
+    height: 249.52px;
+    left: 200px;
+    top: 629px;
+}
+.page-content{
+    display:flex;
+    flex-direction: row;
+}
+.profile{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 882px;
+height: 2469px;
+left: 457px;
+top: 602px;
+
+}
+.details{
+    /* Auto Layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: auto;
+height: fit-content;
+margin-bottom: 20vh;
+left: 0px;
+top: 0px;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.topicHeading{
+    position: static;
+width: 882px;
+height: 81px;
+left: 0px;
+top: 0px;
+
+border-bottom: 3px solid #333333;
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 24px 0px;
+font-size:8ch;
+
+}
+.col{
+    width:auto;
+}
+.topicContent{
+    font-size: 25px;
+}
+.para{
+    font-family: lato;
+}
+ul li{
+    margin-bottom:40px;
+}
