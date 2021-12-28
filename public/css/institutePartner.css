@@ -1,0 +1,257 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.navbar{
+    background-color: rgb(126, 122, 122);
+    width: 100%;
+    height: 4rem;
+}
+.partner-head{
+    background-color: #FCF0E4;
+    height: 18rem;
+}
+.partner-body-wrapper{
+    margin: 2rem 2rem ;
+   
+}
+.flex-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.border-title{
+    background-color: rgb(248, 248, 248);
+  border-bottom: solid black 3.5px;
+   margin-bottom: 1rem;
+   width: 770px;
+}
+.light-border{
+    border-bottom: 3px solid black;
+    width: 362px;
+    height: 2.5rem;
+}
+.partner-avatar-div{
+    width: -webkit-fill-available;
+}
+.partner-avatar-div button{
+    background-color: white;
+    border: none;
+    text-decoration: underline;
+    color: #F16B58;
+}
+.partner-avatar-div span{
+    font-size: 18px;
+    font-weight: 600;
+}
+h1{
+    font-size: 36px;
+    font-weight: 500;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.05em;
+}
+
+  .flex{
+    display: flex;
+  }
+  .qual-detail{
+    width: auto;
+    margin-left: 40px;
+  }
+  .qual-div{
+    margin: 8px 0px;
+  }
+  
+  .ml-1{
+      margin-left: 1rem;
+      margin-top: 1rem;
+  }
+
+.div-element-center{
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 500;
+  letter-spacing: 5%;
+  line-height: 44px;
+  
+}
+p{
+  font-family: 'Lato', sans-serif;
+}
+.insti-profile-img{
+  margin-top: 22px;
+}
+  
+.footerouterdiv{
+    background-color: #24344E;
+    position: relative;
+    bottom: -2rem;
+  }
+  .footer{
+    margin: 2rem 2.5rem;
+    padding:3% 7%;
+    
+  }
+  .footerdiv{
+    border-bottom: solid rgb(252, 248, 248) 3.5px;
+    width: 100%;
+    left: -2px;
+    
+  }
+  .footerHeading{
+    color: white;
+    font-size: 36px;
+    font-weight: 500;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.05em;
+  }
+  .footer ul{
+   list-style: none;
+   
+  }
+  .footer a{
+    color: #ACACAC !important;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+  }
+  .footer li{
+    margin-top: 8px;
+  }
+  .footerlists{
+    
+    margin-top: 1.5rem;
+    justify-content: left;
+    border-left: solid #ACACAC 2px;
+  }
+  .copyright{
+    color: #ACACAC;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.75%;
+  }
+  .contact-div-2{
+    position: relative;
+    height: 313px;
+  }
+  .contact-div-2 button{
+    position: absolute;
+    bottom: 0%;
+  }
+  .mobile-head{
+    display: none;
+    margin: 1.5rem 1rem;
+  }
+  .mobile-head a{
+    color: #F16B58;
+  }
+.media-txt-cent p{
+color: #F16B58;
+}
+
+
+  @media screen and (max-width: 1204px) {
+    .media-txt-cent{
+      text-align: center;
+    }
+    .partner-body-wrapper{
+      margin: 0%;
+    }
+    .light-border h3{
+      font-size: 17px;
+    }
+    
+  }
+
+  @media screen and (max-width: 992px) {
+    .media-col{
+      flex-direction: column;
+    }
+    .head-txt{
+      margin-top: 20px;
+      margin-left: 110px;
+    }
+    .border-title{
+      width: auto;
+    }
+  }
+  @media screen and (max-width: 998px) {
+    .insti-profile-img{
+      display: none;
+    }
+    .insti-profile-txt{
+      width: auto !important;
+    }
+    *{
+      padding: 0%;
+      margin: 0%;
+    }
+  }
+  @media screen and (max-width: 760px) {
+    .contact-div-1 img{
+      width: 200px;
+    }
+    .contact-div-2{
+      padding: 0%;
+      margin: 0%;
+      height: 220px;
+    }
+    .light-border{
+      width: auto;
+    }
+    .contact-div-2{
+      font-size: 10px;
+    }
+    .contact-div-2 span{
+      font-size: 10px;
+    }
+    .partner-head{
+      display: none;
+    }
+    .mobile-head{
+      display: block;
+    }
+  }
+  @media screen and (max-width: 444px) {
+    .contact-div-1 img{
+      width: 122px;
+      height: 250px;
+    }
+    .qual-detail{
+      margin-left: 7px;
+      width: max-content;
+    }
+    .qual-div{
+     
+      margin: 0%;
+    }
+    .light-border{
+      height: 2rem;
+    }
+    .light-border h3{
+      font-size: 14px;
+    }
+    .border-title h1{
+      font-size: 17px;
+    }
+    .border-title{
+      height: 35px;
+    }
+    .insti-profile-txt p{
+      font-size: 10px;
+    }
+    .mobile-head h3{
+font-size: 18px;
+    }
+    .mobile-head a{
+      font-size: 13px;
+    }
+    .flex{
+      overflow: hidden;
+    }
+  }
+
+  
