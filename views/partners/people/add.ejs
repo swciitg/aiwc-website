@@ -1,0 +1,55 @@
+<%- include("../../partials/header.ejs") %> 
+<h1 class="text-3xl text-black pb-6">Add People for <%=partner.name%></h1>
+
+<div class="flex flex-wrap justify-center">
+    <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
+   
+        <div class="leading-loose">
+            <form class="p-10 bg-white rounded shadow-xl" action="/aiwc/admin/partners/<%=partner.id%>/people" method="POST">
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="name">Name</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required placeholder="Person Name">
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="name">Profile Picture</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="pic" name="pic" type="file" required placeholder="Person Profile Picture">
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="name">Qualification</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="qualification" name="qualification" type="text" required placeholder="Person Qualification">
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="designation">Designation</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="designation" name="designation" type="text" required placeholder="Person Designation">
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="employer">Employer</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="employer" name="employer" type="text" required placeholder="Employer">
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="personal_website">Personal Website</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="personal_website" name="personal_website" type="text" placeholder="Personal Website">
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="home_page">Home Page</label>
+                    <input class="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded" type="text" id="home_page" name="home_page" placeholder="Home Page" required></input>
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="email">Email-id</label>
+                    <input class="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded" type="text" id="email" name="email" ></input>
+                </div>
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="priority_number">Priority Number</label>
+                    <input class="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded" type="number" id="priority_number" name="priority_number" ></input>
+                </div>
+                <div class="mt-6">
+                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Add Sublink</button>
+                </div>
+                <div class="mt-2">
+                    <a class="hover:text-blue-500" href="/aiwc/admin/partners/<%=partner.id%>/people">Go Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("../../partials/footer.ejs") %> 

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/db38227f6f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/aiwc/css/partner.css" />
+    <title>Our Partners</title>
+</head>
+<body>
+    <%- include("./partials/header.ejs") %>
+
+
+    <section class="align">
+        <h1  class="title">AUSTRALIA</h1> 
+        <hr color="black" width="100%" class = "ruler"> 
+        <br>
+
+    <div class= "container">
+    <% partners.forEach(partner){ %>
+        <button class="accordion parent"><%=partner.name%></button> 
+        <div class="card">
+            <br>
+            <table >
+            <tr>
+                <td rowspan = "3" class = "image"> <img src="../../uploads/partner_img/<%=partner.pic%>" alt=""></td>
+                <td class="col2"><b>Institute contact person:</b> </td>
+                <td><%=partner.contact_person%></td>
+            </tr>
+
+            <tr>
+            <td class="col2"><b>Institute Website:</b></td>
+                <td>  <a class = "unilink" href=<%= partner.website>><i class="far fa-envelope" >&nbsp;</i><%= partner.website></a> </td>
+            </tr>
+
+            <tr>
+                <td class="col2"> <a class = "Know" href="#">Know More</a><br> </td>
+            </tr>
+            </table>
+            <br>
+            <hr>
+
+            <%partner.people.forEach(person) { %>
+
+            <button class="accordion accordion2"> <%=person.name%>></button>
+            <div class = "card2">
+                <br>
+        
+                <div class = "row">
+                    <div class = "column">  
+                        <div class="person_image"><img src="../../uploads/people_img/<%=person.pic%>" alt="img"></div>
+                    </div>
+        
+                    <div class = "column column2">
+                        <div class = "name"> <%=person.name%></div>
+                        <hr class = "name-hr">
+                            <table>
+                              <tr>
+                                <td class="column2">
+                                 <b>Qualification: </b> 
+                                </td>
+                                <td>
+                                    <%=person.qualification%>
+                                </td>
+                              </tr>
+        
+                              <tr>
+                                <td class="column2">
+                                 <b>Designation:</b>  
+                                </td>
+                                <td>
+                                    <%=person.designation%>
+                                </td>
+                              </tr>
+        
+                              <tr>
+                                <td class="column2">
+                                 <b>Employer: </b> 
+                                </td>
+                                <td>
+                                    <%=person.employer%>
+                                </td>
+                              </tr>
+        
+                              <tr>
+                                <td class="column2">
+                                 <b>Contact Details:</b> 
+                                </td>
+                                <td>
+                                  <i class="far fa-envelope"></i><%=person.email%>
+                                </td>
+                              </tr>
+        
+                              <tr>
+                                <td>
+                                  <div><br><a class = "Know" href="#">Know More</a></div> 
+                                </td>
+                                <td>
+                                  <i class="fas fa-phone-alt"></i>+<%=person.contact%>
+                                </td>
+                              </tr>
+        
+                              <tr>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                  
+                                </td>
+                              </tr>
+                            </table>
+        
+        
+                    </div>
+        
+                </div>
+                <br>
+                <hr  >
+        
+            </div>
+            <%}%>
+            <%}%>
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                acc[0].classList.add("active");
+                acc[0].nextElementSibling.style.maxHeight = acc[0].nextElementSibling.scrollHeight + "px";
+              </script>
+              
+              <script>
+                var elements = document.getElementsByClassName("parent");
+                var currentlyActive = document.querySelector(".accordion.parent.active");
+                var myFunction = function(event) {
+                if(event.srcElement === currentlyActive){
+                  currentlyActive.classList.remove('active');
+                  var panel = currentlyActive.nextElementSibling;
+                  panel.style.maxHeight = null;
+                  currentlyActive = null;
+                  return;
+                }
+                event.srcElement.classList.add('active');
+                if(currentlyActive != null){
+                  currentlyActive.classList.remove('active');
+                  var panel = currentlyActive.nextElementSibling;
+                  panel.style.maxHeight = null;
+                }
+                
+                currentlyActive = event.srcElement;
+                var panel = currentlyActive.nextElementSibling;
+                var parent = currentlyActive.parentElement;
+                parent.style.maxHeight = parseInt(parent.style.maxHeight) + panel.scrollHeight + "px";
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              };
+              
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].addEventListener('click', myFunction, false);
+                }
+              
+              </script>
+              <script>
+                  var elements = document.getElementsByClassName("accordion2");
+                var currentlyActiveChild = document.querySelector(".accordion.accordion2.active");
+                var myFunction2 = function(event) {
+                if(event.srcElement === currentlyActiveChild){
+                  currentlyActiveChild.classList.remove('active');
+                  var panel = currentlyActiveChild.nextElementSibling;
+                  panel.style.maxHeight = null;
+                  currentlyActiveChild = null;
+                  return;
+                }
+                event.srcElement.classList.add('active');
+                if(currentlyActiveChild != null){
+                  currentlyActiveChild.classList.remove('active');
+                  var panel = currentlyActiveChild.nextElementSibling;
+                  panel.style.maxHeight = null;
+                }
+                
+                currentlyActiveChild = event.srcElement;
+                var panel = currentlyActiveChild.nextElementSibling;
+                var parent = currentlyActiveChild.parentElement;
+                parent.style.maxHeight = parseInt(parent.style.maxHeight) + panel.scrollHeight + "px";
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              };
+              
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].addEventListener('click', myFunction2, false);
+                }
+              </script>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

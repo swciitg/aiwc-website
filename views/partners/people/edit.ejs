@@ -1,0 +1,57 @@
+<%- include("../../partials/header.ejs") %> 
+<h1 class="text-3xl text-black pb-6">Add People to <%=partner.name%></h1>
+<div class="flex flex-wrap justify-center">
+    <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
+        <div class="leading-loose">
+            <form class="p-10 bg-white rounded shadow-xl" action="/aiwc/admin/parters/<%=partner.id%>/people/<%=person.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="name"> Name</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required value=<%=person.name %> >
+                </div>
+
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="qualification"> Qualification</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="qualification" name="qualification" type="text" required value=<%=person.qualification %> >
+                </div>
+
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="designation"> Designation</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="designation" name="designation" type="text" required value=<%=person.designation %> >
+                </div>
+
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="employer"> Employer</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="employer" name="employer" type="text" required value=<%=person.employer %> >
+                </div>
+                
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="personal_website"> Personal Website</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="personal_website" name="personal_website" type="text" required value=<%=person.personal_website %> >
+                </div>
+                
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="home_page"> Home Page</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="home_page" name="home_page" type="text" required value=<%=person.home_page %> >
+                </div>
+
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="email">Email-id</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required value=<%=person.email %> >
+                </div>
+
+                <div class="mt-2">
+                    <label class="block text-sm text-gray-600" for="email">Priority Number</label>
+                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="priority_number" name="priority_number" type="number" required value=<%=person.priority_number %> >
+                </div>
+                
+                <div class="mt-6">
+                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Edit Person</button>
+                </div>
+                <div class="mt-2">
+                    <a class="hover:text-blue-500" href="/aiwc/admin/partners/<%=partner.id%>/people">Go Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("../../partials/footer.ejs") %> 
