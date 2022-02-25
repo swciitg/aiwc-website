@@ -3,6 +3,7 @@ const UserSchema = new mongoose.Schema({
     outlookId: String,
     name: String,
     email: String,
+    accessToken: { type: String, required: true,select: false },
     isAdmin: { type: Boolean, default: false }
 });
 
