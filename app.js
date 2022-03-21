@@ -22,7 +22,7 @@ app.use(methodOverride("_method"));
 const adminRoutes = require('./routes/admin.routes');
 const latestNewsRoutes = require('./routes/latestNews.routes');
 const partnersRoutes = require('./routes/partners.routes');
-const peopleRoutes = require('./routes/people.routes');
+// const peopleRoutes = require('./routes/people.routes');
 const researchRoutes = require('./routes/research.routes');
 const userRoutes = require('./routes/user.routes');
 
@@ -77,7 +77,7 @@ app.use(BASE_PATH + "/", userRoutes);
 app.use(BASE_PATH + "/admin", adminRoutes);
 app.use(BASE_PATH + "/admin/latestNews", latestNewsRoutes);
 app.use(BASE_PATH + "/admin/partners", partnersRoutes);
-app.use(BASE_PATH + "/admin/people", peopleRoutes);
+// app.use(BASE_PATH + "/admin/people", peopleRoutes);
 app.use(BASE_PATH + "/admin/research", researchRoutes);
 // app.use(BASE_PATH + "/admin/link", linkRoutes);
 
