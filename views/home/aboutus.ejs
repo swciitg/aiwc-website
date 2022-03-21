@@ -16,6 +16,7 @@
 
 <body>
 
+    <%- include("./partials/header.ejs") %>
 
     <!-- First half -->
     <div class="photo">
@@ -98,118 +99,16 @@
                             width="100%" height="365"></iframe>
                     </div>
                     <div class="ins insscroll">
+                        <% partners.forEach(partner){ %>
+                            <% if(partners.isIndian){ %>
                         <div class="unit"><img class="logo" src="IITlogo.png">
                             <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
+                                <div class="uni"><%=partner.name%></div>
+                                <div class="place"><%=partner.place%><</div>
                             </div>
                         </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
-                        <div class="unit"><img class="logo" src="IITlogo.png">
-                            <div class="sub">
-                                <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                                <div class="place">PLACE</div>
-                            </div>
-                        </div>
-
+                        <%}%>
+                        <%}%>
 
                     </div>
                 </div>
@@ -221,76 +120,17 @@
             <div class="second">
 
                 <div class="ins1 insscroll">
+                   
+                    <% partners.forEach(partner){ %>
+                        <% if(!partners.isIndian){ %>
                     <div class="unit"><img class="logo" src="IITlogo.png">
                         <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
+                            <div class="uni"><%=partner.name%></div>
+                            <div class="place"><%=partner.place%><</div>
                         </div>
                     </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                    <div class="unit"><img class="logo" src="IITlogo.png">
-                        <div class="sub">
-                            <div class="uni">INDIAN INSTITUTE OF NAME</div>
-                            <div class="place">PLACE</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mapimg1">
-                    <!-- <img class="ausimg1" src="Map.png"> -->
-                    <iframe class="mp1"
-                        src="https://www.google.com/maps/d/u/0/embed?mid=1A8QAiRUDaR0VphX2lrbqt_Bv7WRM1GYC" width="100%"
-                        height="365"></iframe>
-
-                </div>
-
+                    <%}%>
+                    <%}%>
 
 
 
