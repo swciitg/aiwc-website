@@ -17,7 +17,8 @@ exports.getHome = async (req, res) => {
 
 exports.getAbout = async (req, res) => {
     try{
-        return res.render("home/aboutus");
+        const partners = Partners.find({}).sort("priority_number");
+        return res.render("home/aboutus", partners);
     }
     catch(error){
         console.log(error);
