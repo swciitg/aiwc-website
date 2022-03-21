@@ -18,7 +18,7 @@ router.get('/login/outlook', passport.authenticate('azure_ad_oauth2'));
 router.get('/login/outlook/redirect',
     passport.authenticate('azure_ad_oauth2', { failureRedirect: process.env.BASE_PATH + '/admin/login' }),
     (req, res) => {
-        // Successful authentication, redirect home.
+        // console.log(req.user);
         res.redirect(process.env.BASE_PATH + '/admin');
     });
 
