@@ -18,6 +18,8 @@ const PartnerSchema = new mongoose.Schema({
     contact_person: { type: String, required: true },
     website: { type: String },
     creation: { type: Date, default: Date.now },
+    place: { type: String },
+    isIndian: {type: Boolean},
     people: [PeopleSchema]
 });
 
