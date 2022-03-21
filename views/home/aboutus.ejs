@@ -100,7 +100,7 @@
                     </div>
                     <div class="ins insscroll">
                         <% partners.forEach(partner){ %>
-                            <% if(partners.isIndian){ %>
+                            <% if(partner.isIndian){ %>
                         <div class="unit"><img class="logo" src="IITlogo.png">
                             <div class="sub">
                                 <div class="uni"><%=partner.name%></div>
@@ -122,7 +122,7 @@
                 <div class="ins1 insscroll">
                    
                     <% partners.forEach(partner){ %>
-                        <% if(!partners.isIndian){ %>
+                        <% if(!partner.isIndian){ %>
                     <div class="unit"><img class="logo" src="IITlogo.png">
                         <div class="sub">
                             <div class="uni"><%=partner.name%></div>
@@ -336,6 +336,6 @@
                 </ul>
             </div>
         </div>
+        <%- include("./partials/footer.ejs") %>
 </body>
-
 </html>
