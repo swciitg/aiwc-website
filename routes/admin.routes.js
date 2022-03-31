@@ -18,13 +18,17 @@ router.get('/login/outlook', passport.authenticate('azure_ad_oauth2'));
 router.get('/login/outlook/redirect',
     passport.authenticate('azure_ad_oauth2', { failureRedirect: process.env.BASE_PATH + '/admin/login' }),
     (req, res) => {
-        // Successful authentication, redirect home.
+        // console.log(req.user);
         res.redirect(process.env.BASE_PATH + '/admin');
     });
 
-module.exports = router;
 
 
+router.get('logout', passport.authenticate('azure_ad_oauth2',{failureRedirect: process.env.BASE_PATH+'admin/logout'}),
+ (req,res)=>{
+    req.logout();
+    res.redirect(process.env.BASE_PATH)
+})
 
 // router.get('/login/outlook',
 //     passport.authenticate('windowslive', {
@@ -39,3 +43,5 @@ module.exports = router;
 //         // Successful authentication, redirect home.
 //         res.redirect(process.env.BASE_PATH + '/admin');
 //     }); CHANGED
+
+module.exports = router;

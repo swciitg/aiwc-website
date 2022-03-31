@@ -4,8 +4,8 @@ const User = require("../models/user");
 // const { OUTLOOK_CLIENT_ID, OUTLOOK_CLIENT_SECRET, BASEAPI } = process.env;
 const jwt = require("jsonwebtoken");
 
-const OUTLOOK_CLIENT_ID = '9978f3c9-0d51-453e-bd05-947e7558f3c8';
-const OUTLOOK_CLIENT_SECRET = 'VposeSie24_U.-3m2Q1EC2CiI.5p.hD2-.';
+const OUTLOOK_CLIENT_ID = '74e55056-c137-4d2d-afa3-b611dc388493';
+const OUTLOOK_CLIENT_SECRET = 'dpX7Q~1bqVB54C7qAgEncDeOYXbz7bz6hLMWp';
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);
@@ -21,18 +21,16 @@ passport.use(
     new AzureAdOAuth2Strategy({
             clientID: OUTLOOK_CLIENT_ID,
             clientSecret: OUTLOOK_CLIENT_SECRET,
-            // callbackURL: `${BASEAPI}/auth/azureadoauth2/callback`,
             callbackURL: 'http://localhost:8000/aiwc/admin/login/outlook/redirect',
-
-            //callbackURL: "http://localhost:8080/sa/api/auth/azureadoauth2/callback",
         },
         async(accessToken, refresh_token, params, profile, done) => {
             try {
-                var waadProfile = jwt.decode(params.id_token);
-                //console.log(waadProfile);
 
-                const user = await User.findOne({ email: waadProfile.upn });
-                if (user) return done(null, user);
+                var waadProfile = jwt.decode(params.id_token);
+
+                // const user = await User.findOne({ email: waadProfile.upn });
+                // if (user) return done(null, user);
+                console.log(waadProfile.upn);
 
                 const newUser = new User({
                     outlookId: waadProfile.oid,

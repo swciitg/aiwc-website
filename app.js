@@ -28,14 +28,14 @@ const userRoutes = require('./routes/user.routes');
 
 //connecting to DB
 mongoose.connect(
-    DB_URI, {
+    "mongodb+srv://Adi_23:23122001@cluster0.cv101.mongodb.net/AIWC?retryWrites=true&w=majority", {
         useUnifiedTopology: true,
         useNewUrlParser: true,
         useCreateIndex: true,
         useFindAndModify: false,
     },
     (err) => {
-        if (err) console.log(err.message);
+        if (err) console.log("bb");
         else console.log("DB connection established");
     });
 
@@ -50,7 +50,7 @@ app.use(
 
 app.use(helmet());
 
-
+app.use(express.static('/public'));
 app.use(passport.initialize());
 app.use(passport.session());
 

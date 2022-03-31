@@ -5,8 +5,8 @@ const Partners = require("../models/partners");
 
 exports.getHome = async (req, res) => {
     try{
-
         const research = await Research.find({}).sort("-creation");
+        console.log(research);
         const latestNews = await News.find({}).sort("-creation");
         return res.render("home/index", research, latestNews);
     }
@@ -17,7 +17,9 @@ exports.getHome = async (req, res) => {
 
 exports.getAbout = async (req, res) => {
     try{
-        return res.render("home/aboutus");
+        const partners = await Partners.find({}).sort("priority_number");
+        console.log(partners)
+        return res.render("home/aboutus",{partners: partners});
     }
     catch(error){
         console.log(error);
