@@ -18,6 +18,7 @@ exports.addPartnerForm = (req, res) => {
 };
 exports.addPartner = async(req, res) => {
     try {
+      console.log(req.body)
         const { name, contact_person, website, place, isIndian } = req.body;
         let temp=false;
         if(isIndian == 'on'){
@@ -29,14 +30,14 @@ exports.addPartner = async(req, res) => {
         console.log(req.body);
         if (req.file) pic = req.file.filename;
         var newPartner = new Partner({
-            name,
-            pic,
-            contact_person,
-            website,
-            place,
-            temp
+            name: name,
+            pic:pic,
+            contact_person: contact_person,
+            website: website,
+            place: place,
+            isIndian: temp
         });
-
+        console.log(newPartner);
         await newPartner.save();
         return res.redirect(process.env.BASE_PATH + "/admin/partners");
     } catch (err) {
@@ -104,7 +105,7 @@ exports.addPerson = async(req, res) => {
         if (!partner) {
           return res.redirect("/aiwc/admin/partners");
         }
-        const person = { name, pic, qualification, designation, employer, personal_website, home_page, email,priority_number } ;
+        const person = { name: name, pic: pic, qualification: qualification, designation: designation, employer: employer, perwsonal_website: personal_website, home_page: home_page, email: email,priority_number: priority_number } ;
         let newPerson = partner.people.create(person);
 
         partner.people.push(newPerson);

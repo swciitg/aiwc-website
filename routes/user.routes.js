@@ -6,6 +6,6 @@ router.get("/", userController.getHome);
 router.get("/partners", userController.getPartners);
 router.get("/about", userController.getAbout);
 router.get("/partners/:partner_id", userController.getPartner);
-router.get("/partners/:person_id", userController.getPerson);
+router.get("/people/:person_id", userController.getPerson);
 router.get("/contactUs", userController.getContactUs);
 module.exports = router;

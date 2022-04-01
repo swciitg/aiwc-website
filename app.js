@@ -35,7 +35,7 @@ mongoose.connect(
         useFindAndModify: false,
     },
     (err) => {
-        if (err) console.log("bb");
+        if (err) console.log(err);
         else console.log("DB connection established");
     });
 

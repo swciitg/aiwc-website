@@ -8,10 +8,13 @@ const OUTLOOK_CLIENT_ID = '74e55056-c137-4d2d-afa3-b611dc388493';
 const OUTLOOK_CLIENT_SECRET = 'dpX7Q~1bqVB54C7qAgEncDeOYXbz7bz6hLMWp';
 
 passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    console.log("user", user)
+    if(typeof(user)==='object')
+        done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
+    console.log(id);
     User.findById(id, function(err, user) {
         done(err, user);
     });
@@ -23,9 +26,9 @@ passport.use(
             clientSecret: OUTLOOK_CLIENT_SECRET,
             callbackURL: 'http://localhost:8000/aiwc/admin/login/outlook/redirect',
         },
-        async(accessToken, refresh_token, params, profile, done) => {
+        async(accessToken, refresh_token, params, profile,  done) => {
             try {
-
+                console.log("found here")
                 var waadProfile = jwt.decode(params.id_token);
 
                 // const user = await User.findOne({ email: waadProfile.upn });
@@ -46,7 +49,7 @@ passport.use(
                     newUser.isAdmin = true;
                 }
 
-
+                console.log("done checking 1")
                 await newUser.save();
                 return done(null, newUser);
             } catch (error) {

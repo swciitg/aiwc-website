@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/db38227f6f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/aiwc/css/partner.css" />
-    <title>Our Partners</title>
+  <meta charset="utf-8">
+  <title>AIWC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <%- include("./partials/header.ejs") %>
-
-
+    <%- include("../partials/header.ejs") %>
+    <% console.log(partners) %>
     <section class="align">
         <h1  class="title">INDIA</h1> 
         <hr color="black" width="100%" class = "ruler"> 
@@ -32,11 +29,11 @@
 
             <tr>
             <td class="col2"><b>Institute Website:</b></td>
-                <td>  <a class = "unilink" href=<%= partner.website>><i class="far fa-envelope" >&nbsp;</i><%= partner.website></a> </td>
+                <td>  <a class = "unilink" href=<%= partner.website%>><i class="far fa-envelope" >&nbsp;</i><%= partner.website%></a> </td>
             </tr>
 
             <tr>
-                <td class="col2"> <a class = "Know" href="#">Know More</a><br> </td>
+                <td class="col2"> <a class = "Know" href="/aiwc/partners/<%=partner._id %>">Know More</a><br> </td>
             </tr>
             </table>
             <br>
@@ -47,7 +44,6 @@
             <button class="accordion accordion2"> <%=person.name%>></button>
             <div class = "card2">
                 <br>
-        
                 <div class = "row">
                     <div class = "column">  
                         <div class="person_image"><img src="../../uploads/people_img/<%=person.pic%>" alt="img"></div>
@@ -120,8 +116,8 @@
                 <hr  >
         
             </div>
-            <%}%>
             <%})%>
+            <%}%>
             <%})%>
 
 
@@ -132,7 +128,7 @@
               <br>
       
           <div class= "container">
-          <% partners.forEach(partner){ %>
+          <% partners.forEach(function(partner){ %>
             <% if(!partner.isIndian){ %>
               <button class="accordion parent"><%=partner.name%></button> 
               <div class="card">
@@ -146,18 +142,18 @@
       
                   <tr>
                   <td class="col2"><b>Institute Website:</b></td>
-                      <td>  <a class = "unilink" href=<%= partner.website>><i class="far fa-envelope" >&nbsp;</i><%= partner.website></a> </td>
+                      <td>  <a class = "unilink" href=""><i class="far fa-envelope" >&nbsp;</i></a> </td>
                   </tr>
       
                   <tr>
-                      <td class="col2"> <a class = "Know" href="#">Know More</a><br> </td>
+                      <td class="col2"> <a class = "Know" href="/aiwc/partners/<%=partner._id %>">Know More <%=partner._id %></a><br> </td>
                   </tr>
                   </table>
                   <br>
                   <hr>
       
-                  <%partner.people.forEach(person) { %>
-      
+                  <%partner.people.forEach(function(person) { %>
+                  
                   <button class="accordion accordion2"> <%=person.name%>></button>
                   <div class = "card2">
                       <br>
@@ -209,7 +205,7 @@
               
                                     <tr>
                                       <td>
-                                        <div><br><a class = "Know" href="#">Know More</a></div> 
+                                        <div><br><a class = "Know" href="/aiwc/people/<%=person._id %>">Know More <%=person._id %></a></div> 
                                       </td>
                                       <td>
                                         <i class="fas fa-phone-alt"></i>+<%=person.contact%>
@@ -234,9 +230,9 @@
                       <hr  >
               
                   </div>
+                  <%})%>
                   <%}%>
-                  <%}%>
-                  <%}%>
+                  <%})%>
 
 
             <script>
@@ -304,6 +300,6 @@
                     elements[i].addEventListener('click', myFunction2, false);
                 }
               </script>
-    <%- include("./partials/footer.ejs") %>
+    <%- include("../partials/footer.ejs") %>
 </body>
 </html>
